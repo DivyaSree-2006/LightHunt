@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LightHunt</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .hero {
+      position: relative; border-radius: 28px; overflow: hidden; min-height: 520px;
+      background:
+        radial-gradient(circle at 78% 30%, rgba(255,214,140,.95) 0, rgba(255,214,140,0) 28%),
+        linear-gradient(180deg, #f9e3c6 0%, #f3b97d 45%, #c9714f 78%, #5b3a4e 100%);
+      padding: 56px 48px; display: flex; flex-direction: column; justify-content: center;
+    }
+    .hero h1 { font-size: clamp(40px, 6vw, 68px); line-height: 1.02; max-width: 560px; }
+    .hero p { max-width: 430px; color: #3c3346; margin: 18px 0 26px; }
+    .hero .stats { display: flex; gap: 28px; margin-top: 36px; font-size: 13px; color: #3c3346; }
+    .hero .stats strong { display: block; font-family: var(--serif); font-size: 22px; color: var(--ink); }
+    .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: -60px; padding: 0 32px; position: relative; }
+    .tile { background: rgba(255,255,255,.92); backdrop-filter: blur(6px); border-radius: var(--radius); padding: 12px; display: flex; gap: 12px; align-items: center; box-shadow: var(--shadow); }
+    .tile .thumb { width: 72px; }
+    .tile .when { font-size: 12px; color: var(--gold); }
+    @media (max-width: 760px) { .hero { padding: 36px 22px; } .tiles { grid-template-columns: 1fr; margin-top: 16px; padding: 0; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <h1 class="title">Never miss <em>golden hour</em> again.</h1>
+      <p>LightHunt tells creators where the light will be perfect tonight, and plans the route to catch it.</p>
+      <div class="row">
+        <a class="btn primary" href="/for-you.html">Find my light tonight →</a>
+        <a class="btn" href="#how">See how it works</a>
+      </div>
+      <div class="stats">
+        <div><strong>500+</strong>photo spots</div>
+        <div><strong>Real-time</strong>light &amp; weather</div>
+        <div><strong>Optimized</strong>routes</div>
+      </div>
+    </section>
+
+    <section class="tiles">
+      <div class="tile"><div class="thumb"></div><div><strong>Charminar</strong><div class="when">Golden hour</div><div class="hint">5:21 – 5:48 PM</div></div></div>
+      <div class="tile"><div class="thumb" style="background:linear-gradient(160deg,#9fb6d8,#4d5f8f 60%,#2b2f4f)"></div><div><strong>Hussain Sagar</strong><div class="when">Blue hour</div><div class="hint">6:15 – 6:45 PM</div></div></div>
+      <div class="tile"><div class="thumb" style="background:linear-gradient(160deg,#f3d1a4,#c98a5d 60%,#7a4a3e)"></div><div><strong>Laad Bazaar</strong><div class="when">Soft side light</div><div class="hint">4:30 – 5:15 PM</div></div></div>
+    </section>
+
+    <section id="how" class="grid grid-3" style="margin-top:56px">
+      <div class="card"><div class="stat-label">1 · Tell us your time</div><h3 style="margin-top:8px">When are you <em>free?</em></h3><p class="muted">Pick your free hours, how far you'll travel, and what you're shooting.</p></div>
+      <div class="card"><div class="stat-label">2 · We read the sky</div><h3 style="margin-top:8px">Sun + <em>clouds</em></h3><p class="muted">We check where the sun will be and the cloud forecast for every nearby spot.</p></div>
+      <div class="card"><div class="stat-label">3 · Go shoot</div><h3 style="margin-top:8px">Your <em>route</em></h3><p class="muted">An ordered trip that gets you to each spot in its best light.</p></div>
+    </section>
+  </main>
+  <script src="/js/common.js"></script>
+  <script>LH.nav('');</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create account · LightHunt</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="page" style="max-width:460px">
+    <div class="card" style="margin-top:24px">
+      <h1 class="title" style="font-size:34px">Join <em>LightHunt</em></h1>
+      <p class="subtitle">Create your account</p>
+      <div id="msg" class="msg error hidden" style="margin-top:16px"></div>
+      <form id="form" style="margin-top:20px">
+        <div class="field"><label for="name">Name</label><input id="name" type="text" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" minlength="6" required></div>
+        <div class="field">
+          <label for="role">I want to</label>
+          <select id="role">
+            <option value="creator">Find spots and plan shoots (Creator)</option>
+            <option value="contributor">Add new spots (Contributor)</option>
+            <option value="moderator">Review spots (Moderator)</option>
+          </select>
+        </div>
+        <button class="btn primary block" type="submit">Create account</button>
+      </form>
+      <p class="hint" style="margin-top:16px">Already have an account? <a href="/login.html">Sign in</a></p>
+    </div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script>
+    LH.nav('');
+    document.getElementById('form').onsubmit = async (e) => {
+      e.preventDefault();
+      const msg = document.getElementById('msg');
+      msg.classList.add('hidden');
+      try {
+        await LH.api('/api/auth/register', { method: 'POST', body: {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value,
+          role: document.getElementById('role').value
+        }});
+        location.href = '/map.html';
+      } catch (err) {
+        msg.textContent = err.message;
+        msg.classList.remove('hidden');
+      }
+    };
+  </script>
+</body>
+</html>

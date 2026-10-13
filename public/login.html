@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · LightHunt</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .wrap { display: grid; grid-template-columns: 420px 1fr; gap: 28px; align-items: start; margin-top: 24px; }
+    .roles { display: grid; gap: 14px; }
+    .role-card { display: flex; gap: 14px; align-items: center; }
+    .role-card .thumb { width: 96px; }
+    @media (max-width: 860px) { .wrap { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="wrap">
+      <div class="card">
+        <h1 class="title" style="font-size:36px">Welcome back</h1>
+        <p class="subtitle">Sign in to your account</p>
+        <div id="msg" class="msg error hidden" style="margin-top:16px"></div>
+        <form id="form" style="margin-top:20px">
+          <div class="field"><label for="email">Email</label><input id="email" type="email" placeholder="name@college.edu" required></div>
+          <div class="field"><label for="password">Password</label><input id="password" type="password" required></div>
+          <button class="btn primary block" type="submit">Sign in</button>
+        </form>
+        <p class="hint" style="margin-top:16px">No account? <a href="/register.html">Create one</a></p>
+        <p class="hint">Demo logins: creator@ / contributor@ / moderator@ / admin@lighthunt.test · password123</p>
+      </div>
+
+      <div class="roles">
+        <div class="card role-card"><div class="thumb"></div><div><h3>Creator</h3><p class="muted" style="margin:4px 0 0">Find spots, plan routes and write reviews.</p></div></div>
+        <div class="card role-card"><div class="thumb" style="background:linear-gradient(160deg,#f3d1a4,#c98a5d 60%,#7a4a3e)"></div><div><h3>Contributor</h3><p class="muted" style="margin:4px 0 0">Submit new spots for review.</p></div></div>
+        <div class="card role-card"><div class="thumb" style="background:linear-gradient(160deg,#cfd8c4,#7f9a7a 60%,#3f5348)"></div><div><h3>Moderator</h3><p class="muted" style="margin:4px 0 0">Approve, send back or reject submissions.</p></div></div>
+        <div class="card role-card"><div class="thumb" style="background:linear-gradient(160deg,#c9cbe0,#6d7398 60%,#2f3456)"></div><div><h3>Admin</h3><p class="muted" style="margin:4px 0 0">Manage users, roles and read reports.</p></div></div>
+      </div>
+    </div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script>
+    LH.nav('');
+    document.getElementById('form').onsubmit = async (e) => {
+      e.preventDefault();
+      const msg = document.getElementById('msg');
+      msg.classList.add('hidden');
+      try {
+        await LH.api('/api/auth/login', { method: 'POST', body: {
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value
+        }});
+        location.href = LH.param('next') || '/map.html';
+      } catch (err) {
+        msg.textContent = err.message;
+        msg.classList.remove('hidden');
+      }
+    };
+  </script>
+</body>
+</html>
