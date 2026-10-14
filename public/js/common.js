@@ -10,6 +10,7 @@
 //   LH.todo(el, {...})                               -> "not built yet" card
 //   LH.escape(text)                                  -> safe text for innerHTML
 //   LH.compass(deg)                                  -> 'E', 'NW', ...
+//   LH.time(isoString)                               -> '5:21 PM' (India time)
 
 const LH = {
   user: null,
@@ -109,6 +110,11 @@ const LH = {
   compass(deg) {
     const dirs = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'];
     return dirs[Math.round(((deg % 360) + 360) % 360 / 45) % 8];
+  },
+
+  time(iso) {
+    if (!iso) return '–';
+    return new Date(iso).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: 'Asia/Kolkata' });
   },
 
   param(name) { return new URLSearchParams(location.search).get(name); }

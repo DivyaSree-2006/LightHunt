@@ -5,19 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Spot · LightHunt</title>
   <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .spot-hero { position: relative; border-radius: 28px; overflow: hidden; min-height: 400px; padding: 34px 36px;
+      background-color: #e9c9a3; background-size: cover; background-position: center; box-shadow: var(--shadow);
+      display: grid; grid-template-columns: 1fr minmax(0, 560px); gap: 24px; align-items: end; }
+    .spot-hero::before { content: ''; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(246,241,234,.9) 0%, rgba(246,241,234,.35) 30%, rgba(246,241,234,0) 55%); }
+    .spot-hero > * { position: relative; }
+    .spot-hero .head { position: absolute; top: 28px; left: 34px; right: 34px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .spot-hero h1 { font-size: clamp(30px, 4vw, 44px); }
+    .spot-hero .meta { color: var(--ink-2); font-size: 14px; margin-top: 4px; }
+    .jump { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-start; }
+    .jump a { background: rgba(255,255,255,.92); }
+    #hero-slot { grid-column: 2; }
+    .section { margin-top: 40px; scroll-margin-top: 16px; }
+    .section > h2 { font-size: clamp(26px, 3vw, 34px); margin-bottom: 16px; }
+    @media (max-width: 860px) {
+      .spot-hero { grid-template-columns: 1fr; min-height: 0; padding: 140px 18px 18px; }
+      .spot-hero .head { left: 18px; right: 18px; top: 18px; }
+      #hero-slot { grid-column: 1; }
+    }
+  </style>
 </head>
 <body>
   <main class="page">
-    <div class="page-head">
-      <h1 class="title" id="page-title">Loading…</h1>
-      <p class="subtitle"><span id="spot-meta"></span></p>
-    </div>
-    <div class="grid grid-2">
-      <section id="section-light"></section>     <!-- LHT-4 Karri    : js/spot-light.js    -->
-      <section id="section-weather"></section>   <!-- LHT-5 Navya    : js/spot-weather.js  -->
-      <section id="section-guidance"></section>  <!-- LHT-8 Karri    : js/spot-guidance.js -->
-      <section id="section-reviews"></section>   <!-- LHT-10 Jadwika : js/spot-reviews.js  -->
-    </div>
+    <section class="spot-hero" id="spot-hero">
+      <div class="head">
+        <div>
+          <h1 class="title" id="page-title">Loading…</h1>
+          <div class="meta" id="spot-meta"></div>
+        </div>
+        <nav class="jump">
+          <a class="btn small" href="#section-weather">Weather score</a>
+          <a class="btn small" href="#section-guidance">Where to stand</a>
+          <a class="btn small" href="#section-reviews">Reviews</a>
+        </nav>
+      </div>
+      <div></div>
+      <div id="hero-slot"></div>            <!-- LHT-4 Karri: day bar card -->
+    </section>
+
+    <section class="section" id="section-light"></section>     <!-- LHT-4 Karri    : js/spot-light.js    -->
+    <section class="section" id="section-weather"></section>   <!-- LHT-5 Navya    : js/spot-weather.js  -->
+    <section class="section" id="section-guidance"></section>  <!-- LHT-8 Karri    : js/spot-guidance.js -->
+    <section class="section" id="section-reviews"></section>   <!-- LHT-10 Jadwika : js/spot-reviews.js  -->
   </main>
   <script src="/js/common.js"></script>
   <script src="/js/spot.js"></script>
