@@ -41,20 +41,16 @@ Demo logins (password for all: `password123`):
 
 ## 2. Who edits which files
 
-**Only edit your own files.** Then there are no merge conflicts.
-
 | Member | Jira epics | Your files |
 |---|---|---|
-| **Vankayala Divya Sree** | LHT-1 User & Role Mgmt, LHT-9 Admin Reports | `routes/auth.js`, `routes/admin.js`, `public/admin.html`, `public/js/admin.js`, `public/login.html`, `public/register.html` |
-| **Jadwika Nakkanaboyina** | LHT-2 Spot Mgmt & Moderation, LHT-10 Ratings & Reviews | `routes/spots.js`, `routes/moderation.js`, `routes/reviews.js`, `public/js/submit-spot.js`, `public/js/moderation.js`, `public/js/spot-reviews.js` |
-| **Likitha Challa** | LHT-3 Location & Map, LHT-7 Route Planning | `routes/location.js`, `routes/trips.js`, `public/js/map.js`, `public/js/trip.js` |
+| **Vankayala Divya Sree** | LHT-1 User & Role Mgmt, LHT-9 Admin Reports | `routes/auth.js`, `routes/admin.js`, `public/js/admin.js`, `public/index.html`, `public/login.html`, `public/register.html` |
+| **Jadwika Nakkanaboyina** | LHT-2 Spot Mgmt & Moderation, LHT-10 Ratings & Reviews | `routes/spots.js`, `routes/moderation.js`, `routes/reviews.js`, `public/submit-spot.html`, `public/js/submit-spot.js`, `public/js/moderation.js`, `public/js/spot-reviews.js` |
+| **Likitha Challa** | LHT-3 Location & Map, LHT-7 Route Planning | `routes/location.js`, `routes/trips.js`, `public/map.html`, `public/js/map.js`, `public/js/trip.js` |
 | **Karri Eakshith** | LHT-4 Sunlight Analysis, LHT-8 On-Site Guidance | `routes/sunlight.js`, `routes/guidance.js`, `public/js/spot-light.js`, `public/js/spot-guidance.js` |
 | **Bandaru Navya Durga** | LHT-5 Weather Scoring, LHT-6 Preferences & Recommendations | `routes/weather.js`, `routes/recommendations.js`, `public/js/spot-weather.js`, `public/js/for-you.js` |
 
 **Shared files (team leader only, ask before changing):**
-`server.js`, `db.js`, `database/schema.sql`, `public/css/style.css`, `public/js/common.js`, `public/index.html`, `public/js/spot.js`.
-
-Each file has `TODO` comments that say exactly what to build. Search for your name in VS Code (Ctrl+Shift+F).
+`server.js`, `db.js`, `database/schema.sql`, `public/css/style.css`, `public/js/common.js`, `public/spot.html`, `public/js/spot.js`, `scripts/`, `package.json`.
 
 ### Things that depend on each other
 
@@ -62,6 +58,17 @@ Each file has `TODO` comments that say exactly what to build. Search for your na
   `module.exports.getLight = (spot, date) => {...}`. Weather, recommendations, routes and guidance all use it.
 - **Jadwika:** spot submission + moderation (LHT-2) fill the database that everyone else reads.
   Until then, use the 7 seeded Hyderabad spots.
+
+### Photos
+
+Run `npm run download-photos` (needs internet) to download free Wikipedia photos for the home page, login cards and all sample spots.
+To use your own photos instead, put them in `public/images/` (names in `public/images/PUT-PHOTOS-HERE.txt`) and run `npm run photos`.
+Missing photos show a sunset gradient, so nothing breaks.
+
+### No internet during the demo?
+
+Add `WEATHER_DEMO=1` to `.env` and restart. The weather score then uses a made-up forecast
+(the page says "Demo forecast"). Maps need internet; every other page still works offline.
 
 ### Free services (no API key needed)
 

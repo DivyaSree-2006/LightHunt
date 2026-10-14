@@ -1,0 +1,13 @@
+EASIEST: run  npm run download-photos  (needs internet). It downloads free Wikipedia photos
+for everything below and attaches them. You can replace any photo with your own later.
+
+LightHunt photos. Names must match exactly (.jpg).
+
+  images/hero.jpg                 big photo on the home page (e.g. Charminar at sunset)
+  images/roles/creator.jpg        photographer taking a photo
+  images/roles/contributor.jpg    person using a phone outdoors
+  images/roles/moderator.jpg      person checking photos on a tablet
+  images/roles/admin.jpg          laptop with charts
+  images/spots/charminar.jpg ... (see spots/PUT-PHOTOS-HERE.txt), then run: npm run photos
+
+If a photo is missing, the page shows a sunset gradient instead, so nothing breaks.

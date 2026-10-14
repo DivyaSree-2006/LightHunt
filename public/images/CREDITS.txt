@@ -1,0 +1,14 @@
+Photo credits
+=============
+hero.jpg: "Charminar_Hyderabad_1.jpg" from https://en.wikipedia.org/wiki/Charminar (Wikimedia Commons, see the file page for author and licence)
+spots/charminar.jpg: "Charminar_Hyderabad_1.jpg" from https://en.wikipedia.org/wiki/Charminar (Wikimedia Commons, see the file page for author and licence)
+spots/hussain-sagar.jpg: "Aerial_view_of_Hussain_Sagar_from_Bansalipet.jpg" from https://en.wikipedia.org/wiki/Hussain_Sagar (Wikimedia Commons, see the file page for author and licence)
+spots/laad-bazaar.jpg: "Laad_Bazaar.jpg" from https://en.wikipedia.org/wiki/Laad_Bazaar (Wikimedia Commons, see the file page for author and licence)
+spots/qutb-shahi-tombs.jpg: "Qutb_Shahi_Tomb_5.jpg" from https://en.wikipedia.org/wiki/Qutb_Shahi_tombs (Wikimedia Commons, see the file page for author and licence)
+spots/golconda-fort.jpg: "Golconda_Fort_005.jpg" from https://en.wikipedia.org/wiki/Golconda (Wikimedia Commons, see the file page for author and licence)
+spots/chowmahalla-palace.jpg: "Chowmahalla_Palace_01.jpg" from https://en.wikipedia.org/wiki/Chowmahalla_Palace (Wikimedia Commons, see the file page for author and licence)
+spots/durgam-cheruvu-bridge.jpg: "Durgam_Cheruvu.jpg" from https://en.wikipedia.org/wiki/Durgam_Cheruvu (Wikimedia Commons, see the file page for author and licence)
+roles/creator.jpg: "Photograph_of_a_Photographer.jpg" from https://en.wikipedia.org/wiki/Photographer (Wikimedia Commons, see the file page for author and licence)
+roles/contributor.jpg: "Wikipedia_homepage_on_a_large_Android_phone,_2015-04-16.jpg" from https://en.wikipedia.org/wiki/Smartphone (Wikimedia Commons, see the file page for author and licence)
+roles/moderator.jpg: "12.9_iPad_Pro_1st_Gen_And_Galaxy_Tab_S8_Ultra_Size_Comparison.jpg" from https://en.wikipedia.org/wiki/Tablet_computer (Wikimedia Commons, see the file page for author and licence)
+roles/admin.jpg: "Laptop_collage.jpg" from https://en.wikipedia.org/wiki/Laptop (Wikimedia Commons, see the file page for author and licence)

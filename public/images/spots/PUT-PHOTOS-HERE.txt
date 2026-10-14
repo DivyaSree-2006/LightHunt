@@ -1,0 +1,13 @@
+Put one photo per sample spot in this folder, named exactly like this:
+
+  charminar.jpg
+  hussain-sagar.jpg
+  laad-bazaar.jpg
+  qutb-shahi-tombs.jpg
+  golconda-fort.jpg
+  chowmahalla-palace.jpg
+  durgam-cheruvu-bridge.jpg
+
+(.jpg, .jpeg, .png or .webp all work)
+
+Then run in the VS Code terminal:   npm run photos
